@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">P3L03LiuJennifer_SharedPreference</string>
+    <string name="increment">0</string>
+    <string name="decrement">0</string>
+</resources>
