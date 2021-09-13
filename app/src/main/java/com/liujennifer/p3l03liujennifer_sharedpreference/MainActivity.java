@@ -79,7 +79,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        //layout.setOnClickListener(new View.OnLongClickListener());
+        layout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                editor.clear().apply();
+                setInitialValues();
+                return false;
+            }
+        });
         setInitialValues();
         startTime = System.currentTimeMillis();
 
@@ -104,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TextView x = (TextView)view;
             x.setText(""+(Integer.parseInt(x.getText().toString())+1));
             editor.putString(x.getTag().toString(), x.getText().toString()).apply();
-            cPS = ++clicks/((System.currentTimeMillis()-startTime)/1000);
+            cPS = ++clicks/((System.currentTimeMillis()-startTime)/1000f);
             Toast.makeText(this, ""+cPS, Toast.LENGTH_SHORT).show();
 
 
