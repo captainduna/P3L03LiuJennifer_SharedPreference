@@ -4,63 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main_Layout">
 
     <TextView
         android:id="@+id/greetingtextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:text="Hello Clicker!"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#89CFF0"/>
+        app:layout_constraintVertical_bias="0.424" />
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bottomrightbutton"
-        android:layout_width="131dp"
-        android:layout_height="130dp"
-        android:background="#ccddaa"
-        android:text="@string/increment"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="598dp" />
-    <!--figure the missing constraints out-->
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bottomleftbutton"
-        android:layout_width="133dp"
-        android:layout_height="130dp"
-        android:background="#ccddaa"
-        android:onClick="decrement"
-        android:text="@string/decrement"
-        app:layout_constraintHorizontal_bias="0.0"
+    <TextView
+        android:id="@+id/topleft_textview"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Top Left"
+        android:tag="topLeft"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="598dp"
-        tools:ignore="MissingConstraints"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#1AA7EC"/>
+
+    <TextView
+        android:id="@+id/topright_textview"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Top Right"
+        android:tag="topRight"
+        android:gravity="center"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#1AA7EC"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/topleftbutton"
-        android:layout_width="133dp"
-        android:layout_height="130dp"
-        android:background="#ccddaa"
-        android:onClick="decrement"
-        android:text="@string/decrement"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:id="@+id/bottomleft_button"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Bottom Left"
+        android:tag="bottomLeft"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-2dp" />
+        android:background="#ccddaa"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/toprightbutton"
-        android:layout_width="131dp"
-        android:layout_height="130dp"
-        android:background="#ccddaa"
-        android:text="@string/increment"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="-2dp" />
+        android:id="@+id/bottomright_button"
+        android:layout_width="@dimen/length"
+        android:layout_height="@dimen/length"
+        android:text="Bottom Right"
+        android:tag="bottomRight"
+        android:textSize="@dimen/textsize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#ccddaa"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="5"
+        android:max="100"
+        android:progress="30"
+        android:progressTint="@color/teal_700"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
